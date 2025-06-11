@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title> Data Tanaman </title>
+  <style>
+  body {
+    font-family: Arial, sans-serif;
+    background-color: #d4fec6;
+    text-align: center;
+    padding: 50px;
+  }
+  h1 {
+    color: #2f5d34;
+  }
+  a{
+    text-align: center;
+    display: inline-block;
+    padding: 12px 24px;
+    background-color: #4CAF50;
+    color: white;
+    text-decoration: none;
+    border-radius: 8px;
+    font-size: 16px;
+  }
+  a:hover {
+    background-color: #45a049;
+  }
+  li{
+    text-align: center;
+    display: block;
+    margin-top: 20px;
+    padding: 12px 24px;
+    background-color: #4CAF50;
+    color: blue;
+    text-decoration: none;
+    border-radius: 8px;
+    font-size: 16px;
+  }
+  </style>
+</head>
+<body>
+  <h2> Data Tanaman yang Terekam: </h2>
+  <ul>
+    {% for img in images %}
+      <li>
+        <a href="{{ url_for('plant_data_page', filename=img) }}">{{ img }}</a>
+      </li>
+    {% else %}
+      <li>Belum ada data tanaman.</li>
+    {% endfor %}
+
+  </ul>
+
+  <a href="{{ url_for('index') }}"> ← Homepage </a>
+</body>
+</html>
